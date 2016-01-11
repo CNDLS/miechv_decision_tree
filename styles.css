@@ -66,6 +66,15 @@ h3 {
   margin: 1em 0.1em;
 }
 
+.tools ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+}
+.tools ul li {
+  margin: 0;
+  padding: 0;
+}
 
 .tools .actors, 
 .tools .actions, 
@@ -74,6 +83,6 @@ h3 {
   width: 20vw;
   height: 19vh;
   display: inline-block;
-  /* float: left; */
+  float: left;
   border: 1px solid black;
 }
