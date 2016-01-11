@@ -1,10 +1,11 @@
 body {
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
+  font-family: sans-serif;
 }
 
 #content {
-  width: 85vw;
+  width: 96vw;
   margin: 0 auto;
 }
 
@@ -24,7 +25,7 @@ body {
 }
 
 .activity div {
-  background-color: #eee;
+  background-color: #efefef;
   border-radius: 0.25em;
 }
 
@@ -58,13 +59,12 @@ h3 {
 
 .actors, .actions {
   margin: 0 auto;
-  width: 2.5em;
 }
 
 .activity .process {
   margin: 0 auto;
   background: transparent;
-  width: 47em;
+  width: 55em;
 }
 
 .process div {
@@ -77,8 +77,8 @@ h3 {
 }
 
 .actors, .actions, .sources, .outcomes {
-  width: 20em;
-  height: 2.8em;
+  width: 24em;
+  height: 3.3em;
 }
 
 .sources, .outcomes {
@@ -97,11 +97,16 @@ h3 {
   margin: 0 0.5em;
 }
 
+.tools .sources, 
+.tools .outcomes {
+  height: 22vh;
+}
+
 .tools span {
   display: inline-block;
   white-space: nowrap;
   padding: 0.1em 0.5em;
-  background-color: #eee;
+  background-color: #efefef;
   border-radius: 0.125em;
   margin: 0.125em;
 }
