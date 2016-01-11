@@ -1,3 +1,79 @@
+body {
+  font-size: 14px;
+  text-align: center;
+}
+
+#content {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.activity, .tools {
+  border: 1px solid black;
+  font-size: 1.25em;
+  width: 50vw;
+  height: 25vh;
+}
+.tools {
+  width: 90vw;
+  height: 20vh;
+  margin: 0 auto;
+  border: none;
+}
+
+.activity div {
+  background-color: #ccc;
+}
+
+h3 {
+  margin:0;
+}
+
 .guy {
   background-image: url("stick-figure1.jpg");
+  background-size: cover;
+  width: 2.5em;
+  height: 5em;
+  margin: 0 auto;
+}
+
+.actors, .actions {
+  margin: 0 auto;
+  width: 2.5em;
+}
+
+.activity .process {
+  margin: 0 auto;
+  background: transparent;
+  width: 23em;
+}
+
+.process div {
+  display: inline-block;
+  float: left;
+}
+
+.actions {
+  clear: both;
+}
+
+.actors, .actions, .sources, .outcomes {
+  width: 10em;
+  height: 2.5em;
+}
+
+.sources, .outcomes {
+  margin: 1em 0.1em;
+}
+
+
+.tools .actors, 
+.tools .actions, 
+.tools .sources, 
+.tools .outcomes {
+  width: 20vw;
+  height: 19vh;
+  display: inline-block;
+  /* float: left; */
+  border: 1px solid black;
 }
