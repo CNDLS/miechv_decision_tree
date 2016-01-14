@@ -1,3 +1,181 @@
+body {
+  font-size: 10px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#content {
+  width: 96vw;
+  margin: 0 auto;
+}
+
+#drag-1, #drag-2, #drag-3, #drag-4, #drag-5, #drag-6{
+
+border-style: solid;
+border-color: black;
+background-color: #29e;
+color: black;
+ 
+  
+  padding: 4%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+#drag-me::before {
+  content: "#" attr(id);
+  font-weight: bold;
+}
+
+#inner-dropzone {
+  width: 24em;
+  height: 5em;
+}
+
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}
+
+.activity, .tools, {
+  border: 1px dashed #999;
+  font-size: 1.25em;
+  width: 85vw;
+  height: 25vh;
+}
+
+.tools {
+  width: 90vw;
+  height: 20vh;
+  margin: 0 auto;
+  border: none;
+  padding: 0.5em;
+  display: table;
+}
+
+.activity div {
+  background-color: #efefef;
+  border-radius: 0.25em;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+
 .guy {
   background-image: url("stick-figure1.jpg");
+  background-size: cover;
+  width: 2.5em;
+  height: 5em;
+  margin: 0 2em;
 }
+
+.guy:before, .guy:after {
+  content: url(arrow-right.png);
+  position: relative;
+  top: -0.8em;
+}
+
+.guy:before {
+  left: -2em;
+  top: 1.3em;
+}
+.guy:after {
+  left: 2em;
+}
+
+.actors, .actions{
+  margin: 0 auto;
+}
+
+.activity .process{
+  margin: 0 auto;
+  background: transparent;
+  width: 55em;
+}
+
+.process div {
+  display: inline-block;
+  float: left;
+}
+
+.actions {
+  clear: both;
+}
+
+.actors, .actions, .sources, .outcomes,  {
+  width: 24em;
+  height: 3.3em;
+}
+
+.sources, .outcomes, {
+  margin: 1em 0.1em;
+}
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2em 0.5em;
+
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+.dropzone {
+  background-color: #ccc;
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  margin: 10px auto 30px;
+  padding: 10px;
+  width: 80%;
+  transition: background-color 0.3s;
+}
+
+.tools .actors, 
+.tools .actions, 
+.tools .sources, 
+.tools .outcomes
+{
+  width: 20vw;
+  height: 19vh;
+  display: table-cell;
+  border: 1px solid #ddd;
+  margin: 0 0.5em;
+}
+
+.tools .sources, 
+.tools .outcomes
+ {
+  height: 22vh;
+}
+
+.tools span {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0.1em 0.5em;
+  background-color: transparent;
+  border-radius: 0.125em;
+  margin: 0.125em;
+}
+
+

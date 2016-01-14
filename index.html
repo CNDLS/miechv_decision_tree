@@ -2,13 +2,85 @@
 <html>
     <head>
         <link rel="stylesheet" media="all" href="styles.css"></link>
+		<script src="interact.js"></script>
+		<script src="drag.js"></script>
+		
     </head>
     <body>
-        <div class="guy"></div>
-        
-        
-        <script src="interact.js"></script>
-        <script>
+        <div id="content">
+            <div class="activity">
+                <h3>Screening</h3>
+                <div class="actors">&nbsp;</div>
+                <div class="process">
+                    <div class="sources">&nbsp;</div>
+                    <div class="guy"></div>
+                    <div class="outcomes">&nbsp;</div>
+                </div>
+                <div class="actions">&nbsp;</div>
+            </div>
+            
+            <div class="activity">
+                <h3>Assessment</h3>
+                <div class="actors">&nbsp;</div>
+                <div class="process">&nbsp;
+					<div id="inner-dropzone" class="dropzone">drop1</div>
+				</div>
+                    <div class="sources">&nbsp;</div>
+                    <div class="guy">&nbsp;</div>
+                    <div class="outcomes">
+						
+					
+				</div>
+                </div>
+                <div class="actions">
+				
+			</div>
+            </div>
+            
+            <div class="activity">
+                <h3>Evaluation</h3>
+                <div class="actors">&nbsp;</div>
+                <div class="process">
+                    <div class="sources">&nbsp;</div>
+                    <div class="guy"></div>
+                    <div class="outcomes">&nbsp;</div>
+                </div>
+                <div class="actions">&nbsp;</div>
+            </div>
+        </div>
+        <div class="tools">
+            <div class="actors">
+				<div  id="yes-drop" class="draggable drag-drop"> 
+					<span>Trained Lay Person</span>
+				</div>
+				
+				<div id="yes-drop" class="draggable"> 
+					<span>Professionals</span>
+				</div>
+				<div id="no-drop" class="draggable drag-drop"> 
+					<span>example 3</span>
+				</div>
+				
+				<div id="no-drop" class="draggable drag-drop"> 
+					<span>example 4</span>
+				</div>
+            </div>
+            <div class="sources">
+				<div id="drag-5" class="draggable"> 
+					<span>Example 5</span>
+				</div>
+				
+				<div id="drag-6" class="draggable"> 
+					<span>example 6 </span>
+				</div>
+            </div>
+            <div class="outcomes">&nbsp;</div>
+            <div class="actions">&nbsp;</div>
+        </div>
+       
+		
+		
+		 <script>
         </script>
     </body>
 </html>
