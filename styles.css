@@ -1,112 +1,165 @@
 body {
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   font-family: sans-serif;
 }
 
-#content {
-  width: 96vw;
+/* 
+  edx only gives us a max width of 712px to work with, on a Mac laptop. 
+  we can shrink text & em-based content from here.
+*/
+#problem-container { 
+  width: 50vw;
   margin: 0 auto;
+  font-size: 1vw;
 }
 
-.activity, .tools {
-  border: 1px dashed #999;
-  font-size: 1.25em;
-  width: 85vw;
-  height: 25vh;
-}
-.tools {
-  width: 90vw;
-  height: 20vh;
-  margin: 0 auto;
-  border: none;
-  padding: 0.5em;
-  display: table;
+.activity, #tools {
+  height: calc(25vh - 1.25em);
+  margin: 8px 0 2px 0;
+  border: 2px dotted #eee;
+  border-radius: 0.5em;
+  position: relative;
 }
 
-.activity div {
-  background-color: #efefef;
+.activity:before, #tools:before {
+  display: block;
+  content: attr(id);
+  text-transform: capitalize;
+  margin: -0.625em auto;
+  font-size: 0.75em;
+  font-weight: bold;
+  width: 6.25vw;
+  color: #666;
+  background-color: white;
+}
+
+.activity:hover, #tools {
+  border-style: solid;
+}
+
+.activity > div, #tools > div {
+  position: absolute;
+  display: table-cell;
+}
+
+.activity > div:not(.guy) {
+  border: 1px dashed #dedede;
   border-radius: 0.25em;
+  width: 20em;
+  height: 3em;
 }
 
-h3 {
-  margin: 0;
-  font-size: 1em;
-  font-weight: normal;
+#tools > div {
+  border: 1px dashed #dedede;
+  border-radius: 0.25em;
+  width: calc(25% - 1em);
+  top: 1.5em;
+  height: calc(100% - 2em);
 }
 
-.guy {
-  background-image: url("stick-figure1.jpg");
+.activity > div:not(.guy):hover {
+  border: 1px solid #dedede;
+  background-color: #fafafa;
+}
+.activity > div:not(.guy):hover:before,
+#tools > div:before {
+  display: block;
+  content: attr(title);
+  text-transform: capitalize;
+  font-size: 0.625em;
+  width: 5vw;
+  color: #999;
+}
+
+
+.activity > div:not(.guy):hover:before {
+  margin: -1.25em auto;
+}
+
+#tools > div:before {
+  margin: -1.25em auto 1.25em auto;
+}
+
+.activity#screening {
+  border-color: lightgreen;
+}
+.activity#assessment {
+  border-color: lightblue;
+}
+.activity#evaluation {
+  border-color: gold;
+}
+
+/* arrange the four types of drop zones around the 'guy', who is centered w/in the activity. */
+.activity > [title=sources] {
+  left: 0.25em;
+  top: calc(37.5% + 0.5em);
+}
+.activity > [title=outcomes] {
+  right: 0.25em;
+  top: calc(37.5% + 0.5em);
+}
+.activity > [title=actors] {
+  top: 1.25em;
+  left: calc(50% - 10em);
+}
+.activity > [title=actions] {
+  bottom: 0.25em;
+  left: calc(50% - 10em);
+}
+
+.activity > .guy {
+  background-image: url("stick-figure1.png");
   background-size: cover;
-  width: 2.5em;
-  height: 5em;
-  margin: 0 2em;
+  width: 1.75em;
+  height: 3.5em;
+  top: calc(50% - 1.375em);
+  left: calc(50% - 0.875em);
 }
 
 .guy:before, .guy:after {
-  content: url(arrow-right.png);
+  content: "\021c9";
+  font-size: 2em;
+  color: #aaa;
   position: relative;
-  top: -0.8em;
+  display: table-cell;
+  padding-top: 0.25em;
 }
 
 .guy:before {
-  left: -2em;
-  top: 1.3em;
+  left: -1em;
 }
+
 .guy:after {
-  left: 2em;
+  left: 0.5em;
 }
 
-.actors, .actions {
-  margin: 0 auto;
+#tools > [title=actors] {
+  left: 0.5em;
 }
 
-.activity .process {
-  margin: 0 auto;
-  background: transparent;
-  width: 55em;
+#tools > [title=actions] {
+  left: calc(25% + 0.5em);
 }
 
-.process div {
-  display: inline-block;
-  float: left;
+#tools > [title=sources] {
+  left: calc(50% + 0.5em);
 }
 
-.actions {
-  clear: both;
+#tools > [title=outcomes] {
+  left: calc(75% + 0.5em);
 }
 
-.actors, .actions, .sources, .outcomes {
-  width: 24em;
-  height: 3.3em;
-}
-
-.sources, .outcomes {
-  margin: 1em 0.1em;
-}
-
-
-.tools .actors, 
-.tools .actions, 
-.tools .sources, 
-.tools .outcomes {
-  width: 20vw;
-  height: 19vh;
-  display: table-cell;
-  border: 1px solid #ddd;
-  margin: 0 0.5em;
-}
-
-.tools .sources, 
-.tools .outcomes {
-  height: 22vh;
-}
-
-.tools span {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0.1em 0.5em;
+#tools span {
+  display: block;
   background-color: #efefef;
-  border-radius: 0.125em;
-  margin: 0.125em;
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  padding: 0.0625em 0.25em;
+}
+
+#tools span:hover {
+  background-color: #ddd;
 }

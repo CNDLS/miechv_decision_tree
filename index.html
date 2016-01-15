@@ -2,54 +2,60 @@
 <html>
     <head>
         <link rel="stylesheet" media="all" href="styles.css"></link>
+		<script src="interact.js"></script>
+		<script src="drag.js"></script>
+		
     </head>
     <body>
-        <div id="content">
-            <div class="activity">
-                <h3>Screening</h3>
-                <div class="actors">&nbsp;</div>
-                <div class="process">
-                    <div class="sources">&nbsp;</div>
-                    <div class="guy"></div>
-                    <div class="outcomes">&nbsp;</div>
-                </div>
-                <div class="actions">&nbsp;</div>
+        <div id="problem-container">
+            
+            <!-- ACTIVITIES: contain drop targets for tool icons. -->
+            <div id="screening" class="activity">
+                <div title="actors" class="droptarget">&nbsp;</div>
+                <div title="sources" class="droptarget">&nbsp;</div>
+                <div class="guy droptarget"></div>
+                <div title="outcomes" class="droptarget">&nbsp;</div>
+                <div title="actions" class="droptarget">&nbsp;</div>
+            </div>
+
+            <div id="assessment" class="activity">
+                <div title="actors" class="droptarget">&nbsp;</div>
+                <div title="sources" class="droptarget">&nbsp;</div>
+                <div class="guy droptarget"></div>
+                <div title="outcomes" class="droptarget">&nbsp;</div>
+                <div title="actions" class="droptarget">&nbsp;</div>
+            </div>
+
+            <div id="evaluation" class="activity">
+                <div title="actors" class="droptarget">&nbsp;</div>
+                <div title="sources" class="droptarget">&nbsp;</div>
+                <div class="guy droptarget"></div>
+                <div title="outcomes" class="droptarget">&nbsp;</div>
+                <div title="actions" class="droptarget">&nbsp;</div>
             </div>
             
-            <div class="activity">
-                <h3>Assessment</h3>
-                <div class="actors">&nbsp;</div>
-                <div class="process">
-                    <div class="sources">&nbsp;</div>
-                    <div class="guy"></div>
-                    <div class="outcomes">&nbsp;</div>
+            <!-- TOOLS: icon wells for the user to drag onto activity elements. -->
+            <div id="tools">
+                <div title="actors" class="well">
+                    <span>Trained Lay Person</span>
+                    <span>Professional</span>
+                    <span>Discipline-Specific Professional</span>
+                    <span>Multidisciplinary Teams</span>
                 </div>
-                <div class="actions">&nbsp;</div>
-            </div>
-            
-            <div class="activity">
-                <h3>Evaluation</h3>
-                <div class="actors">&nbsp;</div>
-                <div class="process">
-                    <div class="sources">&nbsp;</div>
-                    <div class="guy"></div>
-                    <div class="outcomes">&nbsp;</div>
+                <div title="actions" class="well">
+                    <span>Structured Interviews</span>
+                    <span>Structured Observations of Interactions</span>
+                    <span>Standardized Tests</span>
+                    <span>Clinical Procedures</span>
                 </div>
-                <div class="actions">&nbsp;</div>
+                <div title="sources" class="well">
+                    <span>Parent/self report</span>
+                    <span>Elicited Behavior</span>
+                    <span>Clinical Judgement</span>
+                    <span>Medical Test Results</span>
+                </div>
+                <div title="outcomes" class="well">&nbsp;</div>
             </div>
         </div>
-        <div class="tools">
-            <div class="actors">
-                <span>Trained Lay Person</span>
-                <span>Professional</span>
-            </div>
-            <div class="sources">&nbsp;</div>
-            <div class="outcomes">&nbsp;</div>
-            <div class="actions">&nbsp;</div>
-        </div>
-        
-        <script src="interact.js"></script>
-        <script>
-        </script>
     </body>
 </html>
