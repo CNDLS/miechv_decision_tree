@@ -14,15 +14,23 @@ body {
   font-size: 1vw;
 }
 
-.activity, #tools {
-  height: calc(25vh - 1.25em);
-  margin: 8px 0 2px 0;
+.activity, #options {
   border: 2px dotted #eee;
   border-radius: 0.5em;
+  margin: 0.8em 0 0.2em 0;
   position: relative;
 }
 
-.activity:before, #tools:before {
+.activity {
+  height: calc(25vh - 1.25em);
+}
+
+#options {
+  margin-top: 1.5em;
+  height: calc(25vh - 2em);
+}
+
+.activity:before, #options:before {
   display: block;
   content: attr(id);
   text-transform: capitalize;
@@ -34,11 +42,11 @@ body {
   background-color: white;
 }
 
-.activity:hover, #tools {
+.activity:hover, #options {
   border-style: solid;
 }
 
-.activity > div, #tools > div {
+.activity > div, #options > div {
   position: absolute;
   display: table-cell;
 }
@@ -50,12 +58,12 @@ body {
   height: 3em;
 }
 
-#tools > div {
+#options > div {
   border: 1px dashed #dedede;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   width: calc(25% - 1em);
-  top: 1.5em;
-  height: calc(100% - 2em);
+  top: 1em;
+  height: calc(100% - 1.5em);
 }
 
 .activity > div:not(.guy):hover {
@@ -63,22 +71,30 @@ body {
   background-color: #fafafa;
 }
 .activity > div:not(.guy):hover:before,
-#tools > div:before {
+#options > div:before {
   display: block;
   content: attr(title);
   text-transform: capitalize;
   font-size: 0.625em;
   width: 5vw;
   color: #999;
+  background-color: white;
 }
 
+#options > div:hover {
+  border-color: #999;
+}
+
+#options > div:hover:before {
+  color: #333;
+}
 
 .activity > div:not(.guy):hover:before {
   margin: -1.25em auto;
 }
 
-#tools > div:before {
-  margin: -1.25em auto 1.25em auto;
+#options > div:before {
+  margin: -1.25em auto 1em auto;
 }
 
 .activity#screening {
@@ -135,24 +151,25 @@ body {
   left: 0.5em;
 }
 
-#tools > [title=actors] {
+#options > [title=actors] {
   left: 0.5em;
 }
 
-#tools > [title=actions] {
+#options > [title=actions] {
   left: calc(25% + 0.5em);
 }
 
-#tools > [title=sources] {
+#options > [title=sources] {
   left: calc(50% + 0.5em);
 }
 
-#tools > [title=outcomes] {
+#options > [title=outcomes] {
   left: calc(75% + 0.5em);
 }
 
-#tools span {
+#options span {
   display: block;
+  color: #999;
   background-color: #efefef;
   border: 1px solid #eee;
   border-radius: 0.5em;
@@ -160,6 +177,7 @@ body {
   padding: 0.0625em 0.25em;
 }
 
-#tools span:hover {
+#options span:hover {
+  color: black;
   background-color: #ddd;
 }
