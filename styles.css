@@ -42,7 +42,9 @@ body {
   background-color: white;
 }
 
-.activity:hover, #options {
+.activity:hover, 
+.activity.hovered,
+#options {
   border-style: solid;
 }
 
@@ -66,7 +68,8 @@ body {
   height: calc(100% - 1.5em);
 }
 
-.activity > div:not(.guy):hover {
+.activity > div:not(.guy):hover,
+.activity > div:not(.guy).hovered {
   border: 1px solid #dedede;
   background-color: #fafafa;
 }
@@ -167,7 +170,8 @@ body {
   left: calc(75% + 0.5em);
 }
 
-#options span {
+#options span,
+span.clone {
   display: block;
   color: #999;
   background-color: #efefef;
@@ -177,7 +181,12 @@ body {
   padding: 0.0625em 0.25em;
 }
 
-#options span:hover {
+#options span:hover,
+span.dragging {
   color: black;
   background-color: #ddd;
+}
+
+.dragging {
+  position: absolute;
 }
