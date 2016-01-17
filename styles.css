@@ -30,7 +30,8 @@ body {
   height: calc(25vh - 2em);
 }
 
-.activity:before, #options:before {
+.activity:before,
+#options:before {
   display: block;
   content: attr(id);
   text-transform: capitalize;
@@ -48,7 +49,8 @@ body {
   border-style: solid;
 }
 
-.activity > div, #options > div {
+.activity > div,
+#options > div {
   position: absolute;
   display: table-cell;
 }
@@ -70,10 +72,11 @@ body {
 
 .activity > div:not(.guy):hover,
 .activity > div:not(.guy).hovered {
-  border: 1px solid #dedede;
+  border: 1px solid #ccc;
   background-color: #fafafa;
 }
 .activity > div:not(.guy):hover:before,
+.activity > div:not(.guy).hovered:before,
 #options > div:before {
   display: block;
   content: attr(title);
@@ -84,15 +87,18 @@ body {
   background-color: white;
 }
 
-#options > div:hover {
+#options > div:hover
+#options > div.hovered {
   border-color: #999;
 }
 
-#options > div:hover:before {
+#options > div:hover:before
+#options > div.hovered:before {
   color: #333;
 }
 
-.activity > div:not(.guy):hover:before {
+.activity > div:not(.guy):hover:before,
+.activity > div:not(.guy).hovered:before {
   margin: -1.25em auto;
 }
 
