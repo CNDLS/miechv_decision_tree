@@ -18,6 +18,9 @@ var c= {
   option_title: null,
   accept: null,
   
+  // we keep track of whether it was dropped somewhere good.
+  dropped_onto_target: false,
+  
   // create a copy of the clicked item.
   onstart: function (evt) {
     c.thumb = evt.target.cloneNode(true);
