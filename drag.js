@@ -1,11 +1,11 @@
 /*
  * Make 'wells' for dragging out multiple copies of the options.
  * Handle dragging options over dropzones & dropping them in.
- * Use one c.for both interact functions, so we can share
+ * Use one controller for both interact functions, so we can share
  * info about the dragged option.
  */
 
-var c= {
+var c = {
   
   // enable inertial throwing
   inertia: true,
@@ -17,6 +17,9 @@ var c= {
   thumb: null,
   option_title: null,
   accept: null,
+  
+  // we keep track of whether it was dropped somewhere good.
+  dropped_onto_target: false,
   
   // create a copy of the clicked item.
   onstart: function (evt) {
@@ -73,6 +76,17 @@ var c= {
         if (activity.children[j] === undefined) continue;
         activity.children[j].classList.remove("hovered");
       }
+    }
+  },
+  
+  ondrop: function (evt) {
+    c.dragged_element = evt.relatedTarget;
+    c.drop_target = evt.target;
+    if (c.drop_target.title == c.option_title) {
+      c.thumb = document.body.removeChild(c.thumb);
+      c.thumb.style.left = c.thumb.style.top = "0";
+      c.drop_target.appendChild(c.dragged_element);
+      c.dropped_onto_target = true;
     }
   }
 }

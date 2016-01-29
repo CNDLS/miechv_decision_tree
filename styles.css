@@ -60,6 +60,7 @@ body {
   border-radius: 0.25em;
   width: 20em;
   height: 3em;
+  text-align: left;
 }
 
 #options > div {
@@ -75,6 +76,7 @@ body {
   border: 1px solid #ccc;
   background-color: #fafafa;
 }
+
 .activity > div:not(.guy):hover:before,
 .activity > div:not(.guy).hovered:before,
 #options > div:before {
@@ -99,7 +101,7 @@ body {
 
 .activity > div:not(.guy):hover:before,
 .activity > div:not(.guy).hovered:before {
-  margin: -1.25em auto;
+  margin: -1.25em auto 0.5em auto;
 }
 
 #options > div:before {
