@@ -1,11 +1,11 @@
 /*
  * Make 'wells' for dragging out multiple copies of the options.
  * Handle dragging options over dropzones & dropping them in.
- * Use one controller for both interact functions, so we can share
+ * Use one c.for both interact functions, so we can share
  * info about the dragged option.
  */
 
-var c = {
+var c= {
   
   // enable inertial throwing
   inertia: true,
@@ -17,9 +17,6 @@ var c = {
   thumb: null,
   option_title: null,
   accept: null,
-  
-  // we keep track of whether it was dropped somewhere good.
-  dropped_onto_target: false,
   
   // create a copy of the clicked item.
   onstart: function (evt) {
@@ -93,45 +90,3 @@ var c = {
 
 interact('.well > span').draggable(c);
 interact('.droptarget').dropzone(c);
-
-
-
-	// enable draggables to be dropped into this
-  // interact('.dropzone').dropzone({
-  //   // only accept elements matching c.CSS selector
-  //   accept: '#yes-drop',
-  //   // Require a 75% element overlap for a drop to be possible
-  //   overlap: 0.5,
-  //
-  //   // listen for drop related events:
-  //
-  //   ondropactivate: function (event) {
-  //     // add active dropzone feedback
-  //     event.target.classList.add('drop-active');
-  //   },
-  //
-  //   ondragenter: function (event) {
-  //     var draggableElement = event.relatedTarget,
-  //         dropzoneElement = event.target;
-  //
-  //     // feedback the possibility of a drop
-  //     dropzoneElement.classList.add('drop-target');
-  //     draggableElement.classList.add('can-drop');
-  //     //draggableElement.textContent = 'Dragged in';
-  //   },
-  //   ondragleave: function (event) {
-  //     // remove the drop feedback style
-  //     event.target.classList.remove('drop-target');
-  //     event.relatedTarget.classList.remove('can-drop');
-  //     //event.relatedTarget.textContent = 'Dragged out';
-  //   },
-  //   ondrop: function (event) {
-  //   event.target.classList.remove('drop-target');
-  //     //event.relatedTarget.textContent = 'Dropped';
-  //   },
-  //   ondropdeactivate: function (event) {
-  //     // remove active dropzone feedback
-  //     event.target.classList.remove('drop-active');
-  //     event.target.classList.remove('drop-target');
-  //   }
-  // });

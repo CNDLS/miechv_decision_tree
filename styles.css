@@ -119,22 +119,24 @@ body {
 }
 
 /* arrange the four types of drop zones around the 'guy', who is centered w/in the activity. */
-.activity > [title=sources] {
+.activity > [title=sources], .activity > [title=sources] > .droptarget {
   left: 0.25em;
   top: calc(37.5% + 0.5em);
 }
-.activity > [title=outcomes] {
+.activity > [title=outcomes], .activity > [title=outcomes] > .droptarget {
   right: 0.25em;
   top: calc(37.5% + 0.5em);
 }
-.activity > [title=actors] {
+.activity > [title=actors], .activity > [title=actors] > .droptarget {
   top: 1.25em;
   left: calc(50% - 10em);
 }
-.activity > [title=actions] {
+.activity > [title=actions], .activity > [title=actions] > .droptarget {
   bottom: 0.25em;
   left: calc(50% - 10em);
 }
+
+
 
 .activity > .guy {
   background-image: url("stick-figure1.png");
@@ -162,19 +164,19 @@ body {
   left: 0.5em;
 }
 
-#options > [title=actors] {
+#options > [title=actors], #options > [title=actors] > .well{
   left: 0.5em;
 }
 
-#options > [title=actions] {
+#options > [title=actions], #options > [title=actions] > .well{
   left: calc(25% + 0.5em);
 }
 
-#options > [title=sources] {
+#options > [title=sources], #options > [title=sources] > .well{
   left: calc(50% + 0.5em);
 }
 
-#options > [title=outcomes] {
+#options > [title=outcomes], #options > [title=outcomes] > .well{
   left: calc(75% + 0.5em);
 }
 
@@ -197,4 +199,19 @@ span.dragging {
 
 .dragging {
   position: absolute;
+}
+
+.droptarget.drop-active {
+  border-color: #aaa;
+}
+
+.droptarget.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.well.can-drop {
+  color: #000;
+  background-color: #4e4;
 }
