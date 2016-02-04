@@ -9,7 +9,7 @@ body {
   we can shrink text & em-based content from here.
 */
 #problem-container { 
-  width: 50vw;
+  width: calc(100% - 1em);
   margin: 0 auto;
   font-size: calc((1vw + 1.5vh)/2);
 }
@@ -58,8 +58,8 @@ body {
 .activity > div:not(.guy) {
   border: 1px dashed #ccc;
   border-radius: 0.25em;
-  width: 20vw;
-  height: 3em;
+  width: 40%;
+  height: 4em;
   text-align: left;
 }
 
@@ -164,11 +164,11 @@ body {
 }
 .activity > [title=actors], .activity > [title=actors] > .droptarget {
   top: 1.25em;
-  left: calc(50% - 10vw);
+  left: 30%;
 }
 .activity > [title=actions], .activity > [title=actions] > .droptarget {
   bottom: 0.25em;
-  left: calc(50% - 10vw);
+  left: 30%;
 }
 
 
