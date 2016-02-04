@@ -15,7 +15,7 @@ body {
 }
 
 .activity, #options {
-  border: 2px dotted #aaa;
+  border: 2px dotted #ccc;
   border-radius: 0.5em;
   margin: 0.8em 0 0.2em 0;
   position: relative;
@@ -56,7 +56,7 @@ body {
 }
 
 .activity > div:not(.guy) {
-  border: 1px dashed #cfcfcf;
+  border: 1px dashed #ccc;
   border-radius: 0.25em;
   width: 20em;
   height: 3em;
@@ -72,6 +72,16 @@ body {
   border-radius: 0.5em;
   line-height: 1.5em;
   font-size: 0.875em;
+  /* cue up fade out */
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+.activity > div:not(.guy) span.fading {
+  opacity: 0;
 }
 
 #options > div {
@@ -212,6 +222,17 @@ span.clone {
   border-radius: 0.5em;
   margin: 0.125em 0.5em;
   padding: 0.0625em 0.25em;
+  /* cue up fade out */
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+#options span.fading,
+span.clone.fading {
+  opacity: 0;
 }
 
 #options span:hover,

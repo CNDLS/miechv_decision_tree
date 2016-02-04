@@ -97,6 +97,7 @@ var c = {
         c.thumb = document.body.removeChild(c.thumb);
     	  var dropped_span = document.createElement("span");
     	  dropped_span.innerHTML = c.thumb.innerHTML;
+        dropped_span.title = c.thumb.title;
     	  c.drop_target.appendChild(dropped_span);
         c.drop_target.classList.remove("hovered");
         var activities = document.getElementsByClassName("activity");
@@ -114,7 +115,11 @@ var c = {
   onend: function (evt) {
      // if not dropped over a valid target, remove the draggable.
      if (!c.dropped_onto_target) {
-       document.body.removeChild(c.thumb);
+       c.thumb.classList.add("fading");
+       evt.target
+       setTimeout(function () {
+          document.body.removeChild(c.thumb);
+       }, 200);
      }
      c.dropped_onto_target = false;
    },
@@ -151,7 +156,11 @@ var d = {
   },
   
   onend: function (evt) {
-    evt.target.parentNode.removeChild(evt.target);
+    evt.target.classList.add("fading");
+    evt.target
+    setTimeout(function () {
+      evt.target.parentNode.removeChild(evt.target);
+    }, 200);
   }
 }
 
