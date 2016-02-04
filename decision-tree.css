@@ -11,7 +11,7 @@ body {
 #problem-container { 
   width: 50vw;
   margin: 0 auto;
-  font-size: 1vw;
+  font-size: calc((1vw + 1.5vh)/2);
 }
 
 .activity, #options {
@@ -58,7 +58,7 @@ body {
 .activity > div:not(.guy) {
   border: 1px dashed #ccc;
   border-radius: 0.25em;
-  width: 20em;
+  width: 20vw;
   height: 3em;
   text-align: left;
 }
@@ -113,10 +113,11 @@ body {
   content: attr(title);
   text-transform: capitalize;
   font-size: 0.625em;
-  width: 5vw;
+  margin: 0 auto;
   height: 1em;
   color: #999;
   background-color: white;
+  text-align: center;
 }
 
 #options > div:before {
@@ -155,19 +156,19 @@ body {
 /* arrange the four types of drop zones around the 'guy', who is centered w/in the activity. */
 .activity > [title=sources], .activity > [title=sources] > .droptarget {
   left: 0.25em;
-  top: calc(37.5% + 0.5em);
+  top: calc(50% - 0.8em);
 }
 .activity > [title=outcomes], .activity > [title=outcomes] > .droptarget {
   right: 0.25em;
-  top: calc(37.5% + 0.5em);
+  top: calc(50% - 0.8em);
 }
 .activity > [title=actors], .activity > [title=actors] > .droptarget {
   top: 1.25em;
-  left: calc(50% - 10em);
+  left: calc(50% - 10vw);
 }
 .activity > [title=actions], .activity > [title=actions] > .droptarget {
   bottom: 0.25em;
-  left: calc(50% - 10em);
+  left: calc(50% - 10vw);
 }
 
 
