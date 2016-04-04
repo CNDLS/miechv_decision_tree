@@ -109,6 +109,13 @@ var DecisionTree = (function () {
             if (activity === undefined) continue;
             activity.classList.remove("hovered");
           }
+          
+          try {
+            // record the answer.
+            answer_state[c.drop_target.parentElement.id][c.option_title].push(c.thumb.innerHTML);
+          } catch (e) { 
+            console.log("Could not record drop for:", c.drop_target.parentElement.id, c.option_title);
+          }
     	    c.dropped_onto_target = true;
         }
       }
@@ -194,10 +201,13 @@ var DecisionTree = (function () {
   function init () {
     // initialize definition tooltips.
     var options = document.getElementsByTagName("span");
-    var option;
     for (var i=0; i<options.length; i++) {
-      option = options[i];
+      var option = options[i];
       option.title = defs[option.innerHTML];
+      // make any tooltip available to a click (for iPad users).
+      interact(option).on('hold', function (evt) {
+        alert(evt.target.innerHTML +": "+ defs[evt.target.innerHTML]);
+      });
     }
   
     // initialize drag-and-drop.
@@ -208,13 +218,37 @@ var DecisionTree = (function () {
   
   init();
   
-  var answer_state = {};
+  var answer_state = {
+    "screening": {"actors":[],"actions":[],"sources":[],"outcomes":[]},
+    "assessment": {"actors":[],"actions":[],"sources":[],"outcomes":[]},
+    "evaluation": {"actors":[],"actions":[],"sources":[],"outcomes":[]}
+  };
+  
+  
+  // using channel.js
+  var channel;
+
+  // Establish a channel only if this application is embedded in an iframe.
+  // This will let the parent window communicate with this application using
+  // RPC and bypass SOP restrictions.
+  if (window.parent !== window) {
+      channel = Channel.build({
+          window: window.parent,
+          origin: "*",
+          scope: "JSInput"
+      });
+
+      channel.bind("getGrade", getGrade);
+      channel.bind("getState", getState);
+      channel.bind("setState", setState);
+  }
+  
   
   function getState () {
     return JSON.stringify(answer_state);
   }
   
-  function setState (info) {
+  function setState () {
     state_str = arguments.length === 1 ? arguments[0] : arguments[1];
     answer_state = JSON.parse(state_str);
   } 
