@@ -29,10 +29,11 @@ body {
 
 .activity {
   height: calc(25vh - 1.25em);
+  margin-top: 1.5em;
 }
 
 #options {
-  margin-top: 1.5em;
+  margin-top: 1.75em;
   height: calc(25vh - 2em);
 }
 
@@ -41,15 +42,16 @@ body {
   display: block;
   content: attr(id);
   text-transform: capitalize;
-  margin: -0.625em auto;
-  font-size: 0.875em;
+  margin: -1.6em 0;
+  font-size: 1.2em;
   font-weight: bold;
-  width: 12vw;
-  color: #666;
-  background-color: white;
+  width: 100%;
+  color: #333;
+  /* background-color: white; */
+  /* border: 1px solid white; */
 }
 #options:before {
-  margin: -0.875em auto;
+  margin: -1.4em auto;
 }
 
 .activity:hover, 
@@ -65,10 +67,10 @@ body {
 }
 
 .activity > div:not(.guy) {
-  border: 1px dashed #ccc;
+  border: 1px dashed #eeA320;
   border-radius: 0.25em;
   width: 40%;
-  height: 6em;
+  height: 5em;
   text-align: center;
   border-radius: 0.5em;
 }
@@ -98,14 +100,14 @@ body {
   border: 1px dashed #aaa;
   border-radius: 0.5em;
   width: calc(25% - 1em);
-  top: 0.9em;
-  height: calc(100% - 1.25em);
+  top: 1.2em;
+  height: calc(100% - 2.5em);
 }
 
 .activity > div:not(.guy):hover,
 .activity > div:not(.guy).hovered {
-  border: 1px solid #ccc;
-  background-color: #fafafa;
+  border: 1px dashed white;
+  background-color: transparent;
 }
 
 .activity > div:not(.guy):before,
@@ -117,16 +119,27 @@ body {
 }
 
 .activity > div:not(.guy):hover:before,
-.activity > div:not(.guy).hovered:before,
+.activity > div:not(.guy).hovered:before {
+  display: block;
+  content: attr(title);
+  text-transform: capitalize;
+  font-size: 1.2em;
+  margin: 0 auto;
+  height: 1em;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+}
+
 #options > div:before {
   display: block;
   content: attr(title);
   text-transform: capitalize;
-  font-size: 0.75em;
-  margin: 0 auto;
+  font-size: 1.2em;
+  margin: 0.75em auto;
   height: 1em;
-  color: #999;
-  background-color: white;
+  color: #333;
+  background-color: transparent;
   text-align: center;
 }
 
@@ -154,26 +167,26 @@ body {
 }
 
 .activity#screening {
-  border-color: lightgreen;
+  background-color: #0696B7;
 }
 .activity#assessment {
-  border-color: lightblue;
+  background-color: #009D9d;
 }
 .activity#evaluation {
-  border-color: gold;
+  background-color: #73A533;
 }
 
 /* arrange the four types of drop zones around the 'guy', who is centered w/in the activity. */
 .activity > [title=sources], .activity > [title=sources] > .droptarget {
   left: 0.25em;
-  top: calc(50% - 2.6em);
+  top: calc(50% - 2.1em);
 }
 .activity > [title=outcomes], .activity > [title=outcomes] > .droptarget {
   right: 0.25em;
-  top: calc(50% - 2.6em);
+  top: calc(50% - 2.1em);
 }
 .activity > [title=actors], .activity > [title=actors] > .droptarget {
-  top: 1.25em;
+  top: 1.5em;
   left: 30%;
 }
 .activity > [title=actions], .activity > [title=actions] > .droptarget {
@@ -195,7 +208,7 @@ body {
 .guy:before, .guy:after {
   content: "\021c9";
   font-size: 2em;
-  color: #aaa;
+  color: #eea320;
   position: relative;
   display: table-cell;
   padding-top: 0.25em;
