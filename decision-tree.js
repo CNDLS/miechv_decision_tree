@@ -136,6 +136,7 @@ var DecisionTree = (function () {
   }
 
   // for discarding dragged copies once they have been placed.
+  var do_move = true;
   var d = {
     onstart: function (evt) {
       d.parentNode = evt.target.parentNode;
@@ -150,6 +151,10 @@ var DecisionTree = (function () {
     },
   
     onmove: function (evt) {
+      do_move = !do_move;
+      if (!do_move) {
+        return;
+      }
       // keep the dragged position in the data-x/data-y attributes
       x = (evt.target.dataset.drag_x|0) + evt.dx,
       y = (evt.target.dataset.drag_y|0) + evt.dy;

@@ -28,7 +28,7 @@ body {
 }
 
 .activity {
-  height: calc(20vh - 2em);
+  height: calc(25vh - 1.25em);
   margin-top: 1.5em;
 }
 
@@ -42,7 +42,7 @@ body {
   display: block;
   content: attr(id);
   text-transform: capitalize;
-  margin: -1.2em 0;
+  margin: -1.6em 0;
   font-size: 1.2em;
   font-weight: bold;
   width: 100%;
@@ -70,7 +70,7 @@ body {
   border: 1px dashed #eeA320;
   border-radius: 0.25em;
   width: 40%;
-  height: 4.2em;
+  height: 5em;
   text-align: center;
   border-radius: 0.5em;
 }
@@ -79,17 +79,17 @@ body {
 	background-color: #ddd;
 	display: inline-block;
 	white-space: nowrap;
-	padding: 0.03em 0.5em;
+  padding: 0.1em 0.5em;
 	margin: 0.125em;
-	border-radius: 0.5em;
-	line-height: 1.5em;
-	font-size: 1.1em;
+  border-radius: 0.5em;
+  line-height: 1.5em;
+  font-size: 1.1em;
   /* cue up fade out */
-	-webkit-transition: opacity 0.2s ease-out;
-	-moz-transition: opacity 0.2s ease-out;
-	-ms-transition: opacity 0.2s ease-out;
-	-o-transition: opacity 0.2s ease-out;
-	transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .activity > div:not(.guy) span.fading {
@@ -179,18 +179,18 @@ body {
 /* arrange the four types of drop zones around the 'guy', who is centered w/in the activity. */
 .activity > [title=sources], .activity > [title=sources] > .droptarget {
   left: 0.25em;
-  top: calc(46% - 1em);
+  top: calc(50% - 2.1em);
 }
 .activity > [title=outcomes], .activity > [title=outcomes] > .droptarget {
   right: 0.25em;
-  top: calc(46% - 1em);
+  top: calc(50% - 2.1em);
 }
 .activity > [title=actors], .activity > [title=actors] > .droptarget {
   top: 1.5em;
   left: 30%;
 }
 .activity > [title=actions], .activity > [title=actions] > .droptarget {
-  bottom: .25em;
+  bottom: 0.25em;
   left: 30%;
 }
 
